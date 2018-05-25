@@ -1,0 +1,27 @@
+/*
+  Copy input to output.
+  Replace tabs with \t.
+  Replace backspaces with \b.
+  Replace blackslash with \\.
+*/
+
+#include <stdio.h>
+
+int main(int argc, char const *argv[]) {
+  int c;
+  while((c = getchar()) != EOF) {
+    if (c == '\t') {
+      putchar('\\');
+      putchar('t');
+    } else if (c == '\b') {
+      putchar('\\');
+      putchar('b');
+    } else if (c == '\\') {
+      putchar('\\');
+      putchar('\\');
+    } else {
+      putchar(c);
+    }
+  }
+  return 0;
+}
